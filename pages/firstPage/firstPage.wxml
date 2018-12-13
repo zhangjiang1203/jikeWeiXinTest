@@ -1,0 +1,31 @@
+<!-- 引入定义的模板 记得引入文件的时候要添加 / ,不然会出现各种奇怪的问题-->
+<!-- include 把src中的文件类容全部都复制过来 -->
+<include  src="../templates/header" />
+
+
+<view>
+  <text>我就是展示的数据</text>
+  <text>我就是展示的数据</text>
+  <!-- 按钮添加点击事件 bindtap绑定点击事件，在js中实现对应的方法 -->
+  <button type='default' hover-class='other-button-hover' bindtap='btnClick'>{{ btnText }}</button>
+  <button type='primary'> {{ testBtn }}></button>
+  <text>{{ text }}</text>
+
+  <!-- 条件标签 也可以通过数据直接加载进来 -->
+  <view wx:if="{{show}}">{{text}} 1</view>
+  <view wx:else>{{text}} 2</view>
+
+  <!-- 循环标签 -->
+  <view wx:for="{{news}}" wx:for-item='itemx'>
+  <!-- itemx 对应的就是数组中的一条数据,自定义为itemx，默认为item
+       index 对应的下标索引
+   -->
+    添加循环类容---{{item}}---{{index}}
+  </view>
+</view>
+
+<!-- 导入模板的第二中方式 -->
+<import src="../templates/footer" />
+<!-- 加载模板的名称 import通过is来指定导入的模板，展示名称-->
+<!-- 通过data属性设置模板中加载数据 -->
+<template is='footer1' data="{{text:'模板设置内容'}}" />

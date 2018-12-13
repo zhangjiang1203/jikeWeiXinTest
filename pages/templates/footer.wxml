@@ -1,0 +1,11 @@
+<view>
+  这就是要使用的footer
+</view>
+<!-- 使用template定义多个模板加载使用 根据模板的名字去加载模板 name-->
+<template name="footer" >
+  我是底部2 
+</template>
+
+<template name="footer1" >
+  我是底部2 {{text}}
+</template>
